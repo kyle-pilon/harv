@@ -4,7 +4,7 @@ use std::path::PathBuf;
 mod db;
 
 #[derive(Parser)]
-#[command(name = "harv")]
+#[command(name = "mysticrhythm")]
 #[command(about = "Personal cognitive operating system")]
 struct Cli {
     #[command(subcommand)]
@@ -13,7 +13,7 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
-    /// Initialize HARV
+    /// Initialize Mystic Rhythm
     Init,
 
     /// Ingest new thoughts
@@ -28,7 +28,7 @@ fn main() {
 
     match  cli.command {
         Commands::Init => {
-            println!("Initializing HARV...");
+            println!("Initializing Mystic Rhythms...");
 
             // Determine database path
             let db_path = get_db_path();
@@ -60,11 +60,11 @@ fn get_db_path() -> PathBuf {
     let local_app_data = std::env::var("LOCALAPPDATA")
         .expect("LOCALAPPDATA environment variable not set");
 
-    let harv_dir = PathBuf::from(local_app_data).join("harv");
+    let harv_dir = PathBuf::from(local_app_data).join("mysticrhythm");
 
     // Create directory if it doesn't exist
     std::fs::create_dir_all(&harv_dir)
-        .expect("Failed to  create harv directory");
+        .expect("Failed to  create mysticrhythm directory");
 
-    harv_dir.join("harv.db")
+    harv_dir.join("mysticrhythm.db")
 }

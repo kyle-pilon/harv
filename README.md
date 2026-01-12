@@ -1,22 +1,23 @@
-# HARV
+# MysticRhythm
+
+> *"We sometimes catch a window, a glimpse of what's beyond"* — Rush, Mystic Rhythms
 
 **Personal Cognitive Operating System**
 
-HARV is a personal ETL (Extract, Transform, Load) pipeline for thoughts and ideas. It's designed to make the human input → output process maximally efficient by capturing thoughts with minimal friction and routing them into appropriate systems.
+MysticRhythm is a personal ETL (Extract, Transform, Load) pipeline for thoughts and ideas. It's designed to make the human input → output process maximally efficient by capturing thoughts with minimal friction and routing them into appropriate systems.
 
 ## Current Status
 
-**Version:** 0.1.0 (CLI foundation)
+**Version:** 0.1.0 (Database foundation)
 
 Currently implements:
 - Basic CLI structure with subcommands
-- `harv init` - Initialize system
-- `harv ingest` - Ingest thoughts (coming soon)
-- `harv process` - Process thoughts (coming soon)
+- SQLite database layer for thought storage
+- Schema initialization
 
 ## Philosophy
 
-HARV is not a chatbot or AI assistant. It's a software system that augments human cognition through:
+MysticRhythm is not a chatbot or AI assistant. It's a software system that augments human cognition through:
 - Capturing thoughts with zero friction
 - Externalizing memory and decision-making
 - Routing ideas into appropriate systems
@@ -27,13 +28,15 @@ HARV is not a chatbot or AI assistant. It's a software system that augments huma
 Requires Rust 1.70+
 ```bash
 cargo build --release
+cargo run -- init
 cargo run -- --help
 ```
 
 ## Roadmap
 
 - [x] CLI foundation
-- [ ] SQLite storage layer
+- [x] SQLite storage layer
+- [ ] Thought insertion and retrieval
 - [ ] Apple Reminders ingestion
 - [ ] Transform pipeline
 - [ ] Obsidian export
@@ -43,4 +46,5 @@ cargo run -- --help
 
 - Rust
 - clap (CLI)
-- More to come...
+- rusqlite (Database)
+- chrono, uuid (Utilities)

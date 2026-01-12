@@ -151,14 +151,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "645cbb3a84e60b7531617d5ae4e57f7e27308f6445f5abf653209ea76dec8dff"
 
 [[package]]
-name = "harv"
-version = "0.1.0"
-dependencies = [
- "clap",
- "rusqlite",
-]
-
-[[package]]
 name = "hashbrown"
 version = "0.14.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -197,6 +189,14 @@ dependencies = [
  "cc",
  "pkg-config",
  "vcpkg",
+]
+
+[[package]]
+name = "mysticrhythm"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "rusqlite",
 ]
 
 [[package]]
